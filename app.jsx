@@ -1,4 +1,4 @@
-// Aydin's Dad — Smartphone Marketplace (GitHub Pages build)
+// TK Phones — Smartphone Marketplace (GitHub Pages build)
 // Single-file React app with hash routing, brand filters, product detail pages,
 // financing calculator (down payment + monthly), trade-in form, and interlinking.
 // Uses Tailwind via CDN and React UMD + Babel Standalone for JSX in the browser.
@@ -192,7 +192,7 @@ function Nav({path, openDemo}) {
       <Container className="flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="grid h-9 w-9 place-items-center rounded-xl bg-teal-600 text-white font-bold">AD</div>
-          <span className="text-lg font-semibold tracking-tight text-slate-900">Aydin's Dad</span>
+          <span className="text-lg font-semibold tracking-tight text-slate-900">TK Phones</span>
         </div>
         <nav className="hidden items-center gap-6 md:flex">
           {items.map((it) => (
@@ -233,7 +233,7 @@ function Footer() {
         <div>
           <div className="mb-3 flex items-center gap-3">
             <div className="grid h-9 w-9 place-items-center rounded-xl bg-teal-600 text-white font-bold">AD</div>
-            <span className="text-lg font-semibold tracking-tight text-slate-900">Aydin's Dad</span>
+            <span className="text-lg font-semibold tracking-tight text-slate-900">TK Phones</span>
           </div>
           <p className="text-sm text-slate-600">Buy and sell smartphones with transparent financing. Fair prices, fast payouts.</p>
         </div>
@@ -262,7 +262,7 @@ function Footer() {
         </div>
       </Container>
       <Container className="mt-8 flex items-center justify-between border-t border-slate-200 pt-6 text-xs text-slate-500">
-        <span>© {new Date().getFullYear()} Aydin's Dad. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} TK Phones. All rights reserved.</span>
         <div className="flex gap-4">
           <a href="#/terms" onClick={(e)=>e.preventDefault()} className="hover:text-slate-700">Terms</a>
           <a href="#/privacy" onClick={(e)=>e.preventDefault()} className="hover:text-slate-700">Privacy</a>
@@ -280,7 +280,7 @@ function Hero({openDemo}) {
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
             <Badge>Marketplace</Badge>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">Buy & sell phones with <span className="text-teal-700">Aydin's Dad</span>.</h1>
+            <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">Buy & sell phones with <span className="text-teal-700">TK Phones</span>.</h1>
             <p className="mt-4 text-slate-600">Shop certified devices or trade‑in yours for a fast payout. Financing shows your down payment and monthly cost upfront—no surprises.</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button onClick={()=>location.hash = "#/phones"}>Shop Phones</Button>
@@ -585,7 +585,7 @@ function FAQ() {
 function About() {
   return (
     <main>
-      <Section title="About Aydin's Dad" subtitle="A friendly smartphone marketplace built for clarity and speed.">
+      <Section title="About TK Phones" subtitle="A friendly smartphone marketplace built for clarity and speed.">
         <Card>
           <p className="text-sm text-slate-700">We help people upgrade without the guesswork: straightforward pricing, clear financing, and quality devices. This is a demo-ready front end—connect your payment and lending providers to go live.</p>
         </Card>
