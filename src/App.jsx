@@ -1,1 +1,0 @@
-export default function App(){ return <div>TK Phones App Placeholder</div> }
