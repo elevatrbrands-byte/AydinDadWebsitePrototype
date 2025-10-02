@@ -1,0 +1,13 @@
+
+/* Additional tweaks on top of Tailwind CDN */
+:root { --brand: #111827; --accent: #2563eb; }
+a { text-decoration: none; }
+.card { @apply bg-white rounded-2xl shadow p-6; }
+.btn { @apply px-4 py-2 rounded-xl font-medium transition; }
+.btn-primary { @apply bg-blue-600 text-white hover:bg-blue-700; }
+.btn-ghost { @apply bg-white border border-gray-300 hover:bg-gray-100; }
+.input { @apply w-full border border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500; }
+.badge { @apply inline-block text-xs px-2 py-1 rounded-lg bg-gray-100; }
+.modal { @apply fixed inset-0 bg-black/50 flex items-center justify-center p-4 hidden; }
+.modal.show { display:flex; }
+.container-narrow { @apply max-w-3xl mx-auto; }
