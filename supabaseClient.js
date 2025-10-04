@@ -1,0 +1,1 @@
+(function(){if(window.supabase)return;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js';s.defer=true;s.onload=function(){window.supabase=supabasejs.createClient(window.supabaseUrl,window.supabaseAnonKey);};document.head.appendChild(s);}());
