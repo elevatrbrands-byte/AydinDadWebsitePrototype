@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TK Phones | Concierge support</title>
+    <meta
+      name="description"
+      content="Connect with TK Phones concierge support, explore FAQs, and coordinate pickup or shipping for your device."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="brand" href="./index.html" aria-label="TK Phones home">
+          <span class="brand-logo">TK</span>
+          <span class="brand-text">TK Phones</span>
+        </a>
+        <div class="nav-links" role="navigation" aria-label="Primary">
+          <a href="./index.html#how-it-works">How it works</a>
+          <a href="./sell.html">Get an offer</a>
+          <a href="./why.html">Why TK Phones</a>
+          <a href="./contact.html" aria-current="page">Support</a>
+          <a class="btn btn-outline" href="./admin.html">Admin login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero quote-section">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="badge">Concierge support</div>
+            <h1>We’re here to guide every step.</h1>
+            <p>
+              Reach out for white-glove pickup coordination, data wipe certifications, or help with
+              your Integrity Index results. TK Phones support is available daily.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact">Message concierge</a>
+              <a class="btn btn-outline" href="#faq">Browse FAQs</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>Response times</h2>
+            <ul>
+              <li>✔ Concierge chat: under 5 minutes</li>
+              <li>✔ Email support: under 2 hours</li>
+              <li>✔ Pickup coordination: same-day</li>
+              <li>✔ Device grading: within 24 hours of receipt</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header">
+          <h2 class="section-title">Message concierge support</h2>
+          <p class="section-description">
+            Share your request and our specialists will respond swiftly. We’ll confirm pickup
+            details, provide packaging advice, and answer Integrity Index questions.
+          </p>
+        </div>
+        <form id="support-form" class="grid grid-2" novalidate>
+          <div class="form-group">
+            <label for="supportName">Your name</label>
+            <input id="supportName" name="supportName" type="text" required placeholder="Jordan Smith" />
+          </div>
+          <div class="form-group">
+            <label for="supportEmail">Email</label>
+            <input id="supportEmail" name="supportEmail" type="email" required placeholder="you@domain.com" />
+          </div>
+          <div class="form-group">
+            <label for="supportSubject">Topic</label>
+            <select id="supportSubject" name="supportSubject" required>
+              <option value="">Select a topic</option>
+              <option value="pickup">Schedule pickup</option>
+              <option value="quote">Questions about my quote</option>
+              <option value="pricing">Pricing adjustments</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="supportMessage">Message</label>
+            <textarea id="supportMessage" name="supportMessage" rows="4" required placeholder="How can we help?"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Send request</button>
+          </div>
+          <div id="support-status" role="status"></div>
+        </form>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-description">
+            Answers to the most common questions from TK Phones customers.
+          </p>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card">
+            <h3>How fast will I get paid?</h3>
+            <p>
+              Instant payouts are available after device grading is finalized—typically within 2
+              hours of arrival or concierge pickup.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Do you accept Android devices?</h3>
+            <p>
+              Absolutely. While we specialize in flagship phones, we purchase premium Android models
+              from Samsung, Google, OnePlus, and more.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>What if my phone is activation locked?</h3>
+            <p>
+              We can help remove locks where possible. Locked devices default to Integrity rating 1
+              and receive diagnostic assistance before offers are confirmed.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Can I adjust my offer?</h3>
+            <p>
+              Offers adjust automatically if your Integrity answers change. Our concierge will review
+              any discrepancies and re-evaluate pricing in real-time.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>TK Phones</h3>
+          <p>Premium smartphone buybacks with concierge care and transparent pricing.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p><a href="./why.html">Our story</a></p>
+          <p><a href="./contact.html">Support</a></p>
+          <p><a href="./index.html#cta">Concierge program</a></p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p><a href="./why.html#integrity">Integrity Index</a></p>
+          <p><a href="#faq">FAQs</a></p>
+          <p><a href="./admin.html">Admin dashboard</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TK Phones. All rights reserved.</span>
+        <span>Device buybacks. Concierge logistics. Sustainable outcomes.</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./js/contact.js"></script>
+  </body>
+</html>
