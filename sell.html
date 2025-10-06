@@ -1,1 +1,132 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Sell your phone · TK Phones</title><link rel='stylesheet' href='styles.css'><script defer src='supabaseClient.js'></script><script defer src='app.js'></script></head><body><nav class='nav'><div class='logo'><div class='logo-badge'>TK</div><div>TK Phones</div></div><div class='navlinks'><a href='index.html'>Home</a><a href='sell.html'>Sell your phone</a><a href='faq.html'>FAQ</a><a href='contact.html'>Contact</a><a href='admin.html'>Admin</a><a id='nav-auth' href='login.html' class='btn'>Sign In</a></div></nav><main class='container'><div class='grid cols-2'><div class='card'><h2>1) Select your phone</h2><label class='label'>Model</label><select id='modelSelect'></select><hr/><h2>2) Condition</h2><div class='grid'><label class='label'>Screen</label><select class='input' data-q='screen'><option value='perfect'>No scratches/cracks</option><option value='light'>Light scratches</option><option value='heavy'>Heavy scratches</option><option value='cracked'>Cracked</option></select><label class='label'>Battery</label><select class='input' data-q='battery'><option value='great'>≥90%</option><option value='good'>80–89%</option><option value='ok'>70–79%</option><option value='poor'>&lt;70%</option></select><label class='label'>Water damage</label><select class='input' data-q='water'><option value='no'>No</option><option value='maybe'>Not sure</option><option value='yes'>Yes</option></select><label class='label'>Carrier lock</label><select class='input' data-q='lock'><option value='unlocked'>Unlocked</option><option value='locked'>Locked</option></select><label class='label'>Storage</label><select class='input' data-q='storage'><option value='low'>Base</option><option value='mid'>Mid</option><option value='high'>High</option></select></div><div class='grid' style='margin-top:12px'><button id='calcBtn' class='btn'>Calculate estimate</button></div></div><div class='card'><h2>Estimated Offer</h2><p class='label'>Integrity (1–4): <strong id='integrityDisplay'>—</strong></p><h1 id='priceDisplay'>$—</h1><p class='small'>Integrity 1 = unusable; 4 = excellent.</p><hr/><button id='saveQuoteBtn' class='btn' disabled>Save quote</button></div></div><script defer src='pricing.js'></script></main><footer class='footer container'><div class='logo'><div class='logo-badge'>TK</div><div>TK Phones</div></div><p class='small'>We buy used phones—fast quotes, fair prices.</p></footer><div id='toast' class='toast'></div></body></html>
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>Sell your phone · TK Phones</title>
+  <link rel='stylesheet' href='styles.css'>
+  <script defer src='supabaseClient.js'></script>
+  <script defer src='app.js'></script>
+</head>
+<body>
+  <nav class='nav'>
+    <div class='logo'>
+      <div class='logo-badge'>TK</div>
+      <div>TK Phones</div>
+    </div>
+    <div class='navlinks'>
+      <a href='index.html'>Home</a>
+      <a href='sell.html'>Sell your phone</a>
+      <a href='faq.html'>FAQ</a>
+      <a href='contact.html'>Contact</a>
+      <a href='privacy.html'>Privacy</a>
+      <a href='admin.html'>Admin</a>
+      <a id='nav-auth' href='login.html' class='btn'>Sign In</a>
+    </div>
+  </nav>
+  <main class='container'>
+    <header class='page-header'>
+      <h1>Device buyback calculator</h1>
+      <p class='lead'>We&rsquo;ll guide you through five quick questions to rate your phone&rsquo;s integrity and calculate a cash offer.</p>
+      <button class='btn ghost' data-modal-target='gradingModal'>View grading rubric</button>
+    </header>
+
+    <div class='grid cols-2 stack-lg'>
+      <div class='card form-card'>
+        <h2>1) Select your phone</h2>
+        <label class='label' for='modelSelect'>Model</label>
+        <select id='modelSelect' class='input'></select>
+        <hr>
+        <h2>2) Condition</h2>
+        <div class='grid cols-2 stack-sm'>
+          <div>
+            <label class='label'>Screen</label>
+            <select class='input' data-q='screen'>
+              <option value='perfect'>No scratches/cracks</option>
+              <option value='light'>Light scratches</option>
+              <option value='heavy'>Heavy scratches</option>
+              <option value='cracked'>Cracked</option>
+            </select>
+          </div>
+          <div>
+            <label class='label'>Battery</label>
+            <select class='input' data-q='battery'>
+              <option value='great'>≥90%</option>
+              <option value='good'>80–89%</option>
+              <option value='ok'>70–79%</option>
+              <option value='poor'>&lt;70%</option>
+            </select>
+          </div>
+          <div>
+            <label class='label'>Water damage</label>
+            <select class='input' data-q='water'>
+              <option value='no'>No</option>
+              <option value='maybe'>Not sure</option>
+              <option value='yes'>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label class='label'>Carrier lock</label>
+            <select class='input' data-q='lock'>
+              <option value='unlocked'>Unlocked</option>
+              <option value='locked'>Locked</option>
+            </select>
+          </div>
+          <div>
+            <label class='label'>Storage</label>
+            <select class='input' data-q='storage'>
+              <option value='low'>Base</option>
+              <option value='mid'>Mid</option>
+              <option value='high'>High</option>
+            </select>
+          </div>
+        </div>
+        <div class='grid actions-row'>
+          <button id='calcBtn' class='btn primary full'>Calculate estimate</button>
+        </div>
+      </div>
+      <aside class='card summary-card'>
+        <h2>Estimated offer</h2>
+        <p class='label'>Integrity (1–4)</p>
+        <p class='integrity-display' id='integrityDisplay'>—</p>
+        <p class='label'>Estimated payout</p>
+        <p class='price-display' id='priceDisplay'>$—</p>
+        <p class='small'>Integrity 1 = unusable; 4 = excellent.</p>
+        <hr>
+        <button id='saveQuoteBtn' class='btn full' disabled>Save quote</button>
+        <p class='small muted'>Quotes are stored securely in Supabase so our team can follow up.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class='footer container'>
+    <div class='logo'>
+      <div class='logo-badge'>TK</div>
+      <div>TK Phones</div>
+    </div>
+    <div class='footer-links'>
+      <a href='terms.html'>Terms</a>
+      <a href='privacy.html'>Privacy</a>
+      <a href='contact.html'>Contact</a>
+    </div>
+    <p class='small'>We buy used phones—fast quotes, fair prices.</p>
+  </footer>
+  <div id='toast' class='toast'></div>
+
+  <div class='modal' id='gradingModal' aria-hidden='true' role='dialog'>
+    <div class='modal-content card'>
+      <button class='modal-close' data-modal-close aria-label='Close'>&times;</button>
+      <h3>Integrity rubric</h3>
+      <p>Each response feeds into our scoring algorithm. The resulting integrity tier controls the buyback offer.</p>
+      <ul class='modal-list'>
+        <li><strong>Integrity 4:</strong> Excellent condition, no repairs needed.</li>
+        <li><strong>Integrity 3:</strong> Minor cosmetic wear or slight battery fade.</li>
+        <li><strong>Integrity 2:</strong> Moderate issues that may require service.</li>
+        <li><strong>Integrity 1:</strong> Severe damage; valued for salvage.</li>
+      </ul>
+      <p class='small'>Need help? <a href='contact.html'>Contact our support team</a>.</p>
+    </div>
+  </div>
+
+  <script defer src='pricing.js'></script>
+</body>
+</html>

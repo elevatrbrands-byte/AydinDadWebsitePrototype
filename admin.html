@@ -1,1 +1,86 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Admin · TK Phones</title><link rel='stylesheet' href='styles.css'><script defer src='supabaseClient.js'></script><script defer src='app.js'></script></head><body><nav class='nav'><div class='logo'><div class='logo-badge'>TK</div><div>TK Phones</div></div><div class='navlinks'><a href='index.html'>Home</a><a href='sell.html'>Sell your phone</a><a href='faq.html'>FAQ</a><a href='contact.html'>Contact</a><a href='admin.html'>Admin</a><a id='nav-auth' href='login.html' class='btn'>Sign In</a></div></nav><main class='container'><div class='card'><h2>Admin — Models & Prices</h2><div class='grid cols-2'><div><h3>Models</h3><div class='grid'><input id='m-id' class='input' placeholder='model_id (unique)'/><input id='m-name' class='input' placeholder='Display name'/><input id='m-brand' class='input' placeholder='Brand'/><button id='addModelBtn' class='btn'>Add / Update model</button></div><table class='table' style='margin-top:12px'><thead><tr><th>Model</th><th>Brand</th><th>Active</th></tr></thead><tbody id='modelsTbody'></tbody></table></div><div><h3>Prices</h3><div class='grid'><select id='p-model' class='input'></select><input id='p-q1' class='input' type='number' placeholder='Q1'/><input id='p-q2' class='input' type='number' placeholder='Q2'/><input id='p-q3' class='input' type='number' placeholder='Q3'/><input id='p-q4' class='input' type='number' placeholder='Q4'/><button id='savePriceBtn' class='btn'>Save prices</button></div><table class='table' style='margin-top:12px'><thead><tr><th>Model</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody id='pricesTbody'></tbody></table></div></div></div><script defer src='admin.js'></script></main><footer class='footer container'><div class='logo'><div class='logo-badge'>TK</div><div>TK Phones</div></div><p class='small'>We buy used phones—fast quotes, fair prices.</p></footer><div id='toast' class='toast'></div></body></html>
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>Admin · TK Phones</title>
+  <link rel='stylesheet' href='styles.css'>
+  <script defer src='supabaseClient.js'></script>
+  <script defer src='app.js'></script>
+</head>
+<body>
+  <nav class='nav'>
+    <div class='logo'>
+      <div class='logo-badge'>TK</div>
+      <div>TK Phones</div>
+    </div>
+    <div class='navlinks'>
+      <a href='index.html'>Home</a>
+      <a href='sell.html'>Sell your phone</a>
+      <a href='faq.html'>FAQ</a>
+      <a href='contact.html'>Contact</a>
+      <a href='privacy.html'>Privacy</a>
+      <a href='admin.html'>Admin</a>
+      <a id='nav-auth' href='login.html' class='btn'>Sign In</a>
+    </div>
+  </nav>
+  <main class='container'>
+    <header class='page-header'>
+      <h1>Admin dashboard</h1>
+      <p class='lead'>Manage buyback models, fine-tune quality pricing, and keep your catalog up to date.</p>
+    </header>
+    <div class='card'>
+      <div class='grid cols-2 stack-lg'>
+        <section>
+          <h2>Models</h2>
+          <p class='small'>Add or update phone models available for quoting.</p>
+          <div class='grid cols-2 stack-sm'>
+            <input id='m-id' class='input' placeholder='model_id (unique)'>
+            <input id='m-name' class='input' placeholder='Display name'>
+            <input id='m-brand' class='input' placeholder='Brand'>
+            <button id='addModelBtn' class='btn full'>Add / Update model</button>
+          </div>
+          <table class='table admin-table'>
+            <thead>
+              <tr><th>Model</th><th>Brand</th><th>Active</th></tr>
+            </thead>
+            <tbody id='modelsTbody'></tbody>
+          </table>
+        </section>
+        <section>
+          <h2>Pricing tiers</h2>
+          <p class='small'>Set payout values for each integrity score.</p>
+          <div class='grid cols-2 stack-sm'>
+            <select id='p-model' class='input'></select>
+            <input id='p-q1' class='input' type='number' min='0' step='0.01' placeholder='Integrity 1 price'>
+            <input id='p-q2' class='input' type='number' min='0' step='0.01' placeholder='Integrity 2 price'>
+            <input id='p-q3' class='input' type='number' min='0' step='0.01' placeholder='Integrity 3 price'>
+            <input id='p-q4' class='input' type='number' min='0' step='0.01' placeholder='Integrity 4 price'>
+            <button id='savePriceBtn' class='btn full'>Save prices</button>
+          </div>
+          <table class='table admin-table'>
+            <thead>
+              <tr><th>Model</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
+            </thead>
+            <tbody id='pricesTbody'></tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class='footer container'>
+    <div class='logo'>
+      <div class='logo-badge'>TK</div>
+      <div>TK Phones</div>
+    </div>
+    <div class='footer-links'>
+      <a href='terms.html'>Terms</a>
+      <a href='privacy.html'>Privacy</a>
+      <a href='contact.html'>Contact</a>
+    </div>
+    <p class='small'>We buy used phones—fast quotes, fair prices.</p>
+  </footer>
+  <div id='toast' class='toast'></div>
+  <script defer src='admin.js'></script>
+</body>
+</html>
