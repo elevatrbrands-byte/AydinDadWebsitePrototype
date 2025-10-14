@@ -1,24 +1,5 @@
 # TK Phones Concierge Trade-In Site
 
-A static, multi-page website for TK Phones, providing concierge smartphone buyback services with Supabase-backed quoting and admin pricing controls. The experience mirrors the flow of ricksistock.com with updated branding and an Integrity Index scoring system.
-
-## Project structure
-
-```
-.
-├── admin.html         # Admin login + pricing dashboard
-├── assets/
-│   └── logo.svg
-├── index.html         # Marketing landing page
-├── js/
-│   ├── admin.js       # Supabase auth + pricing CRUD
-│   ├── main.js        # Shared UI scripts
-│   ├── sell.js        # Integrity Index quiz + pricing engine
-│   └── supabaseClient.js # Supabase client bootstrap
-├── sell.html          # Guided Integrity Index questionnaire
-├── styles.css         # Global styling
-└── supabase_schema.sql # Database tables, policies, and seed data
-```
 
 ## Getting started locally
 
