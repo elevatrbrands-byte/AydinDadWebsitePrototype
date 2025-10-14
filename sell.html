@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TK Phones | Get your concierge quote</title>
+    <meta
+      name="description"
+      content="Complete the TK Phones Integrity Index quiz to receive a premium offer for your smartphone."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="brand" href="./index.html" aria-label="TK Phones home">
+          <span class="brand-logo">TK</span>
+          <span class="brand-text">TK Phones</span>
+        </a>
+        <div class="nav-links" role="navigation" aria-label="Primary">
+          <a href="./sell.html" aria-current="page">Get an offer</a>
+          <a class="btn btn-outline" href="./admin.html">Admin login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero quote-section" style="padding-bottom: 3rem">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="badge">Integrity Index Quiz</div>
+            <h1>Let’s find your phone’s Integrity rating.</h1>
+            <p>
+              Answer a few tailored questions about your device. We’ll compute a 1-4 Integrity
+              Index score and deliver a concierge-grade buyback offer instantly.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#quiz">Begin questionnaire</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>Integrity Index scoring</h2>
+            <ul>
+              <li><strong>4 • Premier:</strong> Flawless functionality &amp; pristine cosmetics</li>
+              <li><strong>3 • Excellent:</strong> Light wear, full functionality</li>
+              <li><strong>2 • Fair:</strong> Noticeable wear, minor functional flags</li>
+              <li><strong>1 • Unusable:</strong> Critical issues or activation lock</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Guided device questionnaire</h2>
+          <p class="section-description">
+            Be as accurate as possible—your answers help us provide the most precise Integrity
+            Index rating and cash offer.
+          </p>
+        </div>
+        <form id="quote-form" class="grid" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="ownerName">Your name</label>
+              <input id="ownerName" name="ownerName" type="text" placeholder="Jordan Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email for offer</label>
+              <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phoneModel">Phone brand &amp; model</label>
+              <input id="phoneModel" name="phoneModel" type="text" placeholder="Apple iPhone 14 Pro" required />
+            </div>
+            <div class="form-group">
+              <label for="storage">Storage capacity</label>
+              <select id="storage" name="storage" required>
+                <option value="">Select storage</option>
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+                <option value="1024">1 TB</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Does the phone power on normally?</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="powersOn" value="yes" required /> Yes</label>
+              <label class="radio-pill"><input type="radio" name="powersOn" value="sometimes" /> Powers on intermittently</label>
+              <label class="radio-pill"><input type="radio" name="powersOn" value="no" /> No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Screen condition</label>
+            <div class="radio-group">
+              <label class="radio-pill"
+                ><input type="radio" name="screen" value="pristine" required /> Pristine / no marks</label
+              >
+              <label class="radio-pill"><input type="radio" name="screen" value="light" /> Light micro-scratches</label>
+              <label class="radio-pill"><input type="radio" name="screen" value="heavy" /> Heavy scratches</label>
+              <label class="radio-pill"><input type="radio" name="screen" value="cracked" /> Cracked / bleeding</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Battery health</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="battery" value="optimal" required /> 88-100%</label>
+              <label class="radio-pill"><input type="radio" name="battery" value="good" /> 80-87%</label>
+              <label class="radio-pill"><input type="radio" name="battery" value="degraded" /> 70-79%</label>
+              <label class="radio-pill"><input type="radio" name="battery" value="critical" /> Under 70%</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Housing &amp; frame condition</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="body" value="immaculate" required /> Immaculate</label>
+              <label class="radio-pill"><input type="radio" name="body" value="scuffed" /> Light scuffs</label>
+              <label class="radio-pill"><input type="radio" name="body" value="dented" /> Dents / visible wear</label>
+              <label class="radio-pill"><input type="radio" name="body" value="damaged" /> Bent / structural damage</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Is the device free of activation locks (iCloud, Google, MDM)?</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="activation" value="clear" required /> Yes, completely clear</label>
+              <label class="radio-pill"><input type="radio" name="activation" value="unknown" /> Unsure / needs assistance</label>
+              <label class="radio-pill"><input type="radio" name="activation" value="locked" /> Locked to an account</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Additional notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Mention accessories, repairs, or other details"></textarea>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Get Integrity rating &amp; offer</button>
+          </div>
+          <div id="form-status" role="status"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>TK Phones</h3>
+          <p>Premium smartphone buybacks with concierge care and transparent pricing.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p><a href="./index.html">Overview</a></p>
+          <p><a href="./index.html#quote">Integrity Index</a></p>
+          <p><a href="./index.html#cta">Concierge program</a></p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p><a href="./sell.html#quiz">Integrity quiz</a></p>
+          <p><a href="mailto:support@tkphones.com">Email support</a></p>
+          <p><a href="./admin.html">Admin dashboard</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TK Phones. All rights reserved.</span>
+        <span>Device buybacks. Concierge logistics. Sustainable outcomes.</span>
+      </div>
+    </footer>
+
+    <div id="quote-modal" hidden>
+      <div class="modal-backdrop" role="dialog" aria-modal="true">
+        <div class="modal">
+          <button class="modal-close" data-close-modal aria-label="Close">×</button>
+          <h3>Your Integrity Index rating</h3>
+          <p id="quote-summary"></p>
+          <div id="quote-offer"></div>
+          <div class="hero-cta" style="margin-top: 1.5rem">
+            <a class="btn btn-primary" href="mailto:support@tkphones.com">Schedule pickup</a>
+            <button class="btn btn-outline" data-close-modal>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./js/sell.js"></script>
+  </body>
+</html>

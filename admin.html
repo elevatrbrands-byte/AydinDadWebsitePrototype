@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TK Phones | Admin dashboard</title>
+    <meta
+      name="description"
+      content="Secure admin dashboard for TK Phones to manage Integrity Index pricing and review submissions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="brand" href="./index.html" aria-label="TK Phones home">
+          <span class="brand-logo">TK</span>
+          <span class="brand-text">TK Phones</span>
+        </a>
+        <div class="nav-links" role="navigation" aria-label="Primary">
+          <a href="./sell.html">Get an offer</a>
+          <a class="btn btn-outline" href="./admin.html" aria-current="page">Admin login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero quote-section">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="badge">Admin portal</div>
+            <h1>Manage Integrity Index pricing in real time.</h1>
+            <p>
+              Sign in with your TK Phones admin credentials to adjust buyback pricing tiers, review
+              quote submissions, and maintain concierge-level offers.
+            </p>
+          </div>
+          <div class="hero-card" id="session-summary" hidden>
+            <h2>Signed in</h2>
+            <p id="session-email"></p>
+            <button id="sign-out" class="btn btn-outline">Sign out</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="auth-section">
+        <div class="section-header">
+          <h2 class="section-title">Secure login</h2>
+          <p class="section-description">
+            Enter your Supabase-administered credentials to access pricing controls. Need access?
+            Contact the TK Phones operations team.
+          </p>
+        </div>
+        <form id="auth-form" class="grid grid-2" novalidate>
+          <div class="form-group">
+            <label for="adminEmail">Email</label>
+            <input id="adminEmail" name="email" type="email" required placeholder="admin@tkphones.com" />
+          </div>
+          <div class="form-group">
+            <label for="adminPassword">Password</label>
+            <input id="adminPassword" name="password" type="password" required placeholder="••••••••" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Sign in</button>
+          </div>
+          <div id="auth-status" role="status"></div>
+        </form>
+      </section>
+
+      <section class="section" id="pricing-section" hidden>
+        <div class="section-header">
+          <h2 class="section-title">Integrity Index pricing controls</h2>
+          <p class="section-description">
+            Adjust the base payout for each Integrity Index rating. Changes publish instantly to the
+            customer quote experience.
+          </p>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" aria-label="Integrity Index pricing table">
+            <thead>
+              <tr>
+                <th scope="col">Integrity rating</th>
+                <th scope="col">Description</th>
+                <th scope="col">Base payout (USD)</th>
+              </tr>
+            </thead>
+            <tbody id="pricing-rows"></tbody>
+          </table>
+        </div>
+        <div class="hero-cta" style="margin-top: 1.5rem">
+          <button id="save-pricing" class="btn btn-primary">Save updates</button>
+          <div id="pricing-status" role="status"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>TK Phones</h3>
+          <p>Premium smartphone buybacks with concierge care and transparent pricing.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p><a href="./index.html">Overview</a></p>
+          <p><a href="./index.html#quote">Integrity Index</a></p>
+          <p><a href="./index.html#cta">Concierge program</a></p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p><a href="./sell.html#quiz">Integrity quiz</a></p>
+          <p><a href="mailto:support@tkphones.com">Email support</a></p>
+          <p><a href="./admin.html">Admin dashboard</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TK Phones. All rights reserved.</span>
+        <span>Device buybacks. Concierge logistics. Sustainable outcomes.</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./js/admin.js"></script>
+  </body>
+</html>
